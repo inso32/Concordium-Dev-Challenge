@@ -1,6 +1,7 @@
-MultiSig Smart Contract - smart contract that requires 3 different accounts signatures to authorize some CCD transfers.
+### MultiSig Smart Contract - 
+smart contract that requires 3 different accounts signatures to authorize some CCD transfers.
 
-##Transaction hashes
+# Transaction hashes
 1. Deploy
 2. Initialize
 3. Update
