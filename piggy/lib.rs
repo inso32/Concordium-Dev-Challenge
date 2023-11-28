@@ -1,8 +1,6 @@
 //! Piggy bank smart contract.
-//!
 //! Allows anyone to insert CCD, but only the owner can "smash" it and
 //! retrieve the CCD. Prevents more CCD to be inserted after being smashed.
-//!
 //! Covers:
 //! - Reading owner, sender, and self_balance from the context and host.
 //! - The `ensure` macro.
