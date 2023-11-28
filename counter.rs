@@ -1,6 +1,5 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
-//! # A Concordium V1 smart contract
 use concordium_std::*;
 use core::fmt::Debug;
 
@@ -26,13 +25,10 @@ pub enum Error {
 /// Init function that creates a new smart contract.
 #[init(contract = "counter")]
 fn init(_ctx: &InitContext, _state_builder: &mut StateBuilder) -> InitResult<State> {
-    // Your code
-
     Ok(State { counter: 0 })
 }
 
 pub type MyInputType = bool;
-
 
 type IncrementVal = i8;
 /// Receive function. The input parameter is the `IncrementVal`.
@@ -49,7 +45,6 @@ fn increment(
     ctx: &ReceiveContext,
     host: &mut Host<State>,
 ) -> Result<(), Error> {
-    // Your code
 
     let param: IncrementVal = ctx.parameter_cursor().get()?;
     let state = host.state_mut();
@@ -74,7 +69,6 @@ fn decrement(
     ctx: &ReceiveContext,
     host: &mut Host<State>,
 ) -> Result<(), Error> {
-    // Your code
 
     let param: IncrementVal = ctx.parameter_cursor().get()?;
     let state = host.state_mut();
@@ -87,7 +81,6 @@ fn decrement(
     state.counter += param;
     Ok(())
 }
-
 
 /// View function that returns the content of the state.
 #[receive(contract = "counter", name = "view", return_value = "i8")]
